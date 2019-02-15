@@ -46,5 +46,16 @@ Library.prototype.addPlaylist = function(playlist) {
   this.playlists.push(playlist);
 };
 
-// Each playlist has an overallRating function which will
-//calculate the rating by averaging the rating of its tracks.
+// Each playlist has an overallRating function
+Playlist.prototype.overallRating = function() {
+  //calculate the rating by averaging the rating of its tracks.
+  let averageRating = 0; //start w/ a manageable default value
+  // loop through tracks
+  for (let index in this.tracks) {
+    // for the index in this instance of tracks
+    averageRating += this.tracks[index].rating;
+    //add average rating to the index and the rating value of the tracks object
+  }
+  return averageRating / this.tracks.length;
+  // return averageRating divided by the amount of tracks there are
+};
