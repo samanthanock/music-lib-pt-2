@@ -3,8 +3,6 @@
 
 //
 
-// Each playlist also has a totalDuration function which will summ the duration of all its tracks.
-
 // Library has a NAME and a CREATOR (both strings).
 // A library has many PLAYLISTS ===> playlists can be added to an INSTANCE of a library.
 function Library(name, creator) {
@@ -58,4 +56,13 @@ Playlist.prototype.overallRating = function() {
   }
   return averageRating / this.tracks.length;
   // return averageRating divided by the amount of tracks there are
+};
+
+// Each playlist also has a totalDuration function which will sum the duration of all its tracks.
+Playlist.prototype.totalDuration = function() {
+  let averageDuration = 0;
+  for (let index in this.tracks) {
+    duration += this.tracks[index].length;
+  }
+  return `this jam is ${duration} seconds long.`;
 };
