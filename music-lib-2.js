@@ -66,3 +66,23 @@ Playlist.prototype.totalDuration = function() {
   }
   return `this jam is ${duration} seconds long.`;
 };
+
+// lets create the library!
+const library = new Library('Library', 'Sam');
+const playlist = new Playlist(`Sam's Cool Playlist`);
+// tracks have three things they need: name, rating, seconds
+const song = new Track('Somewhere Over the Rainbow', 4, 400);
+const song2 = new Track('Bodak Yellow', 3, 200);
+const song3 = new Track(`Chadadadahoootchie`, 5, 500);
+// add songs to playlist
+
+playlist.addTrack(song);
+console.log(song);
+playlist.addTrack(song2);
+console.log(song2);
+playlist.addTrack(song3);
+
+// add playlist to library
+library.addPlaylist(playlist);
+console.log(playlist);
+console.log(library.playlists);
